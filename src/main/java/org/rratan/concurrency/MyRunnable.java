@@ -1,0 +1,17 @@
+package org.rratan.concurrency;
+
+import static org.rratan.concurrency.Utils.getCurrTimeStamp;
+
+public class MyRunnable implements Runnable{
+    @Override
+    public void run(){
+
+        System.out.println(getCurrTimeStamp()+Thread.currentThread().getName());
+        try{
+            Thread.sleep(3000);
+            System.out.println(getCurrTimeStamp()+Thread.currentThread().getName());
+        }catch (InterruptedException e){
+            System.out.println(e);
+        }
+    }
+}
